@@ -1,27 +1,58 @@
-# MedicalFront
+# Desafio Angular - Consulta paciente
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
+Este projeto é um exemplo de aplicação Angular utilizando Angular Material para construir uma interface rica e responsiva. Desenvolvido com as melhores práticas em mente, o projeto foca na responsividade e na experiência do usuário.
 
-## Development server
+## Tecnologias Utilizadas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular CLI: 17.3.2
+- Node: 20.10.0
+- Package Manager: npm 10.2.5
+- Angular: 17.3.2
+- Angular Material
+- TypeScript: 5.3.3
+- RxJS: 7.8.1
+- Zone.js: 0.14.4
 
-## Code scaffolding
+## Instalação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Para rodar este projeto localmente, certifique-se de ter o [Node.js](https://nodejs.org/en/) e o [Angular CLI](https://cli.angular.io/) instalados.
 
-## Build
+1. Clone o repositório:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+   ```
+   git clone <https://github.com/pro-pedropaulo/medical.git>
+   ```
 
-## Running unit tests
+2. Instale as dependências:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```
+   npm install
+   ```
 
-## Running end-to-end tests
+3. Execute o projeto:
+   ```
+   ng serve
+   ```
+   Acesse `http://localhost:4200/` no navegador para ver a aplicação.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Responsividade
 
-## Further help
+O projeto utiliza CSS e Angular Material para garantir que a interface seja responsiva e acessível em dispositivos de diferentes tamanhos, com otimizações específicas para elementos como tabelas e sidebars.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Pontos de Melhoria
+
+- **Acessibilidade:** Ampliar os recursos de acessibilidade para todos os usuários.
+- **Testes:** Implementar mais testes unitários e de integração.
+- **Performance:** Otimizar a performance, especialmente para dispositivos móveis.
+
+## Acesso Online
+
+O projeto está disponível online em: https://medical-7aal8wzcv-pedros-projects-a4954bcf.vercel.app/
+
+Para mais detalhes, histórico de commits visite o repositório no GitHub: https://github.com/pro-pedropaulo/medical-appointment
+
+Além disso, confira o [vídeo no YouTube](https://www.youtube.com/watch?v=RgjYEqaCwak) para mais informações sobre o projeto.
+
+## Contribuições
+
+Contribuições são bem-vindas! Para contribuir, crie uma pull request ou abra uma issue.
