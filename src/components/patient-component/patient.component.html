@@ -1,0 +1,137 @@
+<app-patient-filter
+  (search)="onSearch($event)"
+  (statusFilter)="onStatusFilter($event)"
+></app-patient-filter>
+
+<div class="patient-table">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+    <!-- Coluna de Nome do Paciente -->
+    <ng-container matColumnDef="fullName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Paciente</th>
+      <td mat-cell *matCellDef="let element">
+        <span
+          matTooltip="{{ element.fullName }}"
+          *ngIf="isNameTooLong(element.fullName)"
+          >{{ getDisplayName(element.fullName) }}</span
+        >
+        <span *ngIf="!isNameTooLong(element.fullName)">{{
+          element.fullName
+        }}</span>
+      </td>
+    </ng-container>
+
+    <!-- Coluna de Status -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let element">
+        <span
+          [ngClass]="{
+            ativo: element.status === 'Active',
+            inativo: element.status === 'Inactive'
+          }"
+        >
+          {{ element.status === "Active" ? "Ativo" : "Inativo" }}
+        </span>
+      </td>
+    </ng-container>
+
+    <!-- Coluna de Diagnóstico -->
+    <ng-container matColumnDef="diagnosis">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Diagnóstico</th>
+      <td mat-cell *matCellDef="let element">{{ element.diagnosis }}</td>
+    </ng-container>
+
+    <!-- Coluna de Medicamento -->
+    <ng-container matColumnDef="medication">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Medicamento</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.medicineNameComecial || "-" }}
+      </td>
+    </ng-container>
+
+    <!-- Coluna de Plano de Saúde -->
+    <ng-container matColumnDef="healthPlan">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Plano de Saúde</th>
+      <td mat-cell *matCellDef="let element">{{ element.healthPlan }}</td>
+    </ng-container>
+
+    <!-- Coluna de Última Solicitação -->
+    <ng-container matColumnDef="lastRequest">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>
+        Última Solicitação
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.lastRequest | date : "dd/MM/yyyy" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon matTooltip="Nova solicitação">add_circle_outline</mat-icon>
+        <mat-icon
+          class="more_horizontal"
+          matTooltip="Atualizar status"
+          (click)="toggleStatus(element.id)"
+          >more_horiz</mat-icon
+        >
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <div class="paginator-controls">
+    <div class="paginator-info">
+      <span
+        >Mostrando {{ rangeStart }} a {{ rangeEnd }} de
+        {{ totalPatients }} pacientes</span
+      >
+    </div>
+
+    <div class="custom-paginator">
+      <button (click)="goToPage(0)" [disabled]="currentPage === 0">«</button>
+      <button
+        (click)="goToPage(currentPage - 1)"
+        [disabled]="currentPage === 0"
+      >
+        ‹
+      </button>
+
+      <button
+        *ngFor="let pageNumber of [].constructor(totalPages()); let i = index"
+        (click)="goToPage(i)"
+        [class.active]="currentPage === i"
+      >
+        {{ i + 1 }}
+      </button>
+
+      <button
+        (click)="goToPage(currentPage + 1)"
+        [disabled]="currentPage >= totalPages() - 1"
+      >
+        ›
+      </button>
+      <button
+        (click)="goToPage(totalPages() - 1)"
+        [disabled]="currentPage >= totalPages() - 1"
+      >
+        »
+      </button>
+    </div>
+
+    <div class="page-size-selector">
+      <label for="page-size">Itens por página:</label>
+      <select id="page-size" (change)="setPageSize($event)">
+        <option
+          *ngFor="let size of pageSizeOptions"
+          [value]="size"
+          [selected]="size === pageSize"
+        >
+          {{ size }}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>

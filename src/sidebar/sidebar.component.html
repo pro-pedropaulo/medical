@@ -1,0 +1,44 @@
+<div class="app-container">
+  <div class="sidebar" [class.open]="isSidebarOpen">
+    <button class="close-btn" *ngIf="isSidebarOpen" (click)="toggleSidebar()">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <div class="sidebar-header">
+      <img src="../../assets/images/logo.png" alt="Logo" />
+      <div class="user-info">
+        <div class="user-initials">YM</div>
+        <div class="user-name">Nome Sobrenome</div>
+      </div>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="#"><mat-icon>home</mat-icon> Home</a>
+      </li>
+      <li class="active">
+        <a href="#"><mat-icon>assignment_ind</mat-icon> Pacientes</a>
+      </li>
+      <li>
+        <a href="#"><mat-icon>content_paste</mat-icon> Solicitações</a>
+      </li>
+      <li>
+        <a href="#"><mat-icon>healing</mat-icon> Atendimentos</a>
+      </li>
+      <li>
+        <a href="#"><mat-icon>dashboard</mat-icon> Dashboards</a>
+      </li>
+    </ul>
+    <div class="logout">
+      <a href="#"><mat-icon>exit_to_app</mat-icon> Sair</a>
+    </div>
+  </div>
+  <div></div>
+  <button
+    class="hamburger-menu"
+    *ngIf="!isSidebarOpen"
+    (click)="toggleSidebar()"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <app-patient></app-patient>
+</div>

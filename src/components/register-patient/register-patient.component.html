@@ -1,0 +1,89 @@
+<div class="modal-overlay">
+  <div class="modal">
+    <h2 class="modal-title">Cadastrar Novo Paciente</h2>
+    <form class="patient-form">
+      <mat-form-field appearance="outline" class="full-width-input">
+        <mat-label>Nome Completo</mat-label>
+        <input
+          matInput
+          placeholder="Nome Completo"
+          required
+          [(ngModel)]="patient.fullName"
+          name="fullName"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width-input">
+        <mat-label>Diagnóstico</mat-label>
+        <input
+          matInput
+          placeholder="Diagnóstico"
+          required
+          [(ngModel)]="patient.diagnosis"
+          name="diagnosis"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width-input">
+        <mat-label>Medicamento</mat-label>
+        <input
+          matInput
+          placeholder="Nome Medicamento"
+          required
+          [(ngModel)]="patient.medication"
+          name="medication"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width-input">
+        <mat-label>Nome Comercial do Medicamento</mat-label>
+        <input
+          matInput
+          placeholder="Nome Medicamento Comercial"
+          required
+          [(ngModel)]="patient.medicineNameComecial"
+          name="medicineNameComecial"
+        />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width-input">
+        <mat-label>Plano de Saúde</mat-label>
+        <input
+          matInput
+          placeholder="Plano de Saúde"
+          required
+          [(ngModel)]="patient.healthPlan"
+          name="healthPlan"
+        />
+      </mat-form-field>
+
+      <mat-slide-toggle
+        [(ngModel)]="patient.status"
+        name="status"
+        class="status-toggle"
+      >
+        Status (Inativo/ativo)
+      </mat-slide-toggle>
+
+      <div class="form-actions">
+        <button
+          mat-flat-button
+          color="warn"
+          class="custom-cancel-button"
+          (click)="onCancel()"
+        >
+          Cancelar
+        </button>
+        <button
+          style="margin-left: 40px"
+          mat-raised-button
+          color="primary"
+          class="custom-save-button"
+          (click)="onSave()"
+        >
+          Salvar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

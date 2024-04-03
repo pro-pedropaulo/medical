@@ -1,0 +1,28 @@
+<div class="controls-wrapper">
+  <div class="patient-controls">
+    <h2>Pacientes</h2>
+    <button class="register-button" (click)="openRegisterModal()">
+      <span class="material-icons">add</span>
+      <span class="button-text">Cadastrar Paciente</span>
+    </button>
+  </div>
+
+  <div class="patient-controls">
+    <div class="search-input">
+      <input
+        matInput
+        #searchBox
+        placeholder="Pesquisar"
+        (input)="applyFilter(searchBox.value)"
+      />
+      <button mat-icon-button>
+        <mat-icon class="icon-search">search</mat-icon>
+      </button>
+    </div>
+    <select #statusSelect (change)="applyStatusFilter(statusSelect.value)">
+      <option value="all">Todos os Pacientes</option>
+      <option value="active">Pacientes Ativos</option>
+      <option value="inactive">Pacientes Inativos</option>
+    </select>
+  </div>
+</div>
