@@ -49,8 +49,6 @@ O projeto utiliza CSS e Angular Material para garantir que a interface seja resp
 
 O projeto está disponível online em: https://medical-7aal8wzcv-pedros-projects-a4954bcf.vercel.app/
 
-Para mais detalhes, histórico de commits visite o repositório no GitHub: https://github.com/pro-pedropaulo/medical-appointment
-
 Além disso, confira o [vídeo no YouTube](https://www.youtube.com/watch?v=RgjYEqaCwak) para mais informações sobre o projeto.
 
 ## Contribuições
