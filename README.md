@@ -47,7 +47,7 @@ O projeto utiliza CSS e Angular Material para garantir que a interface seja resp
 
 ## Acesso Online
 
-O projeto está disponível online em: https://medical-7aal8wzcv-pedros-projects-a4954bcf.vercel.app/
+O projeto está disponível online em: [https://medical-7aal8wzcv-pedros-projects-a4954bcf.vercel.app/](https://vercel.com/pedros-projects-a4954bcf/medical-page/tk1aD9CwgJCS65D4wzRc99KZDWXu)
 
 Além disso, confira o [vídeo no YouTube](https://www.youtube.com/watch?v=RgjYEqaCwak) para mais informações sobre o projeto.
 
